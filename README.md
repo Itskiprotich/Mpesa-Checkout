@@ -46,9 +46,9 @@ Create an instance of ImejaMpesa class:
 
 Note: 
 
-*For Development Purpose* use ```Mode.SANDOX``` 
+*For Development Purpose* use ```OperationMode.SANDOX``` 
 
-*For Production Purpose*  use ```Mode.PRODUCTION``` 
+*For Production Purpose*  use ```OperationMode.PRODUCTION``` 
 
 ```
 ImejaMpesa mpesa = new ImejaMpesa(YOUR_CONSUMER_KEY, YOUR_CONSUMER_SECRET, OperationMode.SANDBOX);
