@@ -36,7 +36,7 @@ Step 2. ** Add the dependency **
 
 ```
 dependencies {
-	   implementation 'com.github.Keeprawteach:Mpesa-Checkout:0.0.1'
+	   implementation 'com.github.Keeprawteach:Mpesa-Checkout:0.1.1'
 	}
 ```
 
@@ -138,4 +138,8 @@ a callback listener `new STKListener()`.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Do NOT FORGET
+
+Remember to enable internet permissions
 
