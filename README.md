@@ -36,13 +36,13 @@ Step 2. ** Add the dependency **
 
 ```
 dependencies {
-	   implementation 'com.github.Keeprawteach:Mpesa-Checkout:0.1.1'
+	   implementation 'com.github.Keeprawteach:Mpesa-Checkout:1.1.1'
 	}
 ```
 
 Step 3. ** Initialize the SDK **
 
-Create an instance of Mpesa class: 
+Create an instance of ImejaMpesa class: 
 
 Note: 
 
@@ -51,7 +51,7 @@ Note:
 *For Production Purpose*  use ```Mode.PRODUCTION``` 
 
 ```
-Mpesa mpesa = new Mpesa(YOUR_CONSUMER_KEY, YOUR_CONSUMER_SECRET, Mode.SANDBOX);
+ImejaMpesa mpesa = new ImejaMpesa(YOUR_CONSUMER_KEY, YOUR_CONSUMER_SECRET, OperationMode.SANDBOX);
 ```
 
 Step 4. Call `getToken()` method to get an authorization token from mpesa API

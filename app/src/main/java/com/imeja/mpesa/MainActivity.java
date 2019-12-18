@@ -13,7 +13,7 @@ import com.imeja.mpesacheckout.OperationMode;
 import com.imeja.mpesacheckout.apidata.response.STKPushResponse;
 import com.imeja.mpesacheckout.interfaces.STKListener;
 import com.imeja.mpesacheckout.interfaces.TokenListener;
-import com.imeja.mpesacheckout.model.Mpesa;
+import com.imeja.mpesacheckout.model.ImejaMpesa;
 import com.imeja.mpesacheckout.model.STKPush;
 import com.imeja.mpesacheckout.model.Token;
 import com.imeja.mpesacheckout.model.Transaction;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity  implements TokenListener {
 
     private EditText phoneET, amountET;
     private SweetAlertDialog sweetAlertDialog;
-    private Mpesa mpesa;
+    private ImejaMpesa imejaMpesa;
 
     private String phone_number;
     private String amount;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity  implements TokenListener {
         setContentView(R.layout.activity_main);
         phoneET = findViewById(R.id.phoneET);
         amountET = findViewById(R.id.amountET);
-        mpesa = new Mpesa(ConstantsInfo.CONSUMER_KEY, ConstantsInfo.CONSUMER_SECRET, OperationMode.SANDBOX);
+        imejaMpesa = new ImejaMpesa(ConstantsInfo.CONSUMER_KEY, ConstantsInfo.CONSUMER_SECRET, OperationMode.SANDBOX);
 
         sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
         sweetAlertDialog.setTitleText("Connecting to Safaricom");
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity  implements TokenListener {
         if (!phone_number.isEmpty() && !amount.isEmpty()) {
             try {
                 sweetAlertDialog.show();
-                mpesa.getToken(this);
+                imejaMpesa.getToken(this);
             } catch (UnsupportedEncodingException e) {
                 Log.e(TAG, "UnsupportedEncodingException: " + e.getLocalizedMessage());
             }
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity  implements TokenListener {
         stkPush.setAccountReference("test");
         stkPush.setTransactionDesc("some description");
 
-        mpesa.startStkPush(token, stkPush, new STKListener() {
+        imejaMpesa.startStkPush(token, stkPush, new STKListener() {
             @Override
             public void onResponse(STKPushResponse stkPushResponse) {
                 Log.e(TAG, "onResponse: " + stkPushResponse.toJson(stkPushResponse));
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity  implements TokenListener {
 
     @Override
     public void OnTokenError(Throwable throwable) {
-        Log.e(TAG, "mpesa Error: " + throwable.getMessage());
+        Log.e(TAG, "imejaMpesa Error: " + throwable.getMessage());
         sweetAlertDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
         sweetAlertDialog.setTitleText("Error");
         sweetAlertDialog.setContentText(throwable.getMessage());

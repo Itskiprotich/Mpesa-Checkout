@@ -17,16 +17,16 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
-public class Mpesa {
+public class ImejaMpesa {
 
-    private static final String TAG = Mpesa.class.getSimpleName();
+    private static final String TAG = ImejaMpesa.class.getSimpleName();
 
     private CompositeSubscription mCompositeSubscription;
     private String consumerKey;
     private String consumerSecret;
     private OperationMode mode;
 
-    public Mpesa(String consumerKey, String consumerSecret, OperationMode mode) {
+    public ImejaMpesa(String consumerKey, String consumerSecret, OperationMode mode) {
         this.consumerKey = consumerKey;
         this.consumerSecret = consumerSecret;
         this.mode = mode;
