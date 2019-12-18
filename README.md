@@ -1,6 +1,6 @@
-# mpesa-android 
+# Mpesa-Checkout
 
-Mpesa-Android makes it easy to process online checkout using mpesa as the preferred method of payment.
+Mpesa-Checkout makes it easy to process online checkout using mpesa as the preferred method of payment.
 
 ## Getting Started
 
@@ -36,7 +36,7 @@ Step 2. ** Add the dependency **
 
 ```
 dependencies {
-	  compile 'com.github.freddygenicho:mpesa-android:1.1.1'
+	   implementation 'com.github.Keeprawteach:Mpesa-Checkout:0.0.1'
 	}
 ```
 
@@ -133,7 +133,7 @@ a callback listener `new STKListener()`.
 
 ## Authors
 
-* **Fredrick Ochieng**
+* **Kiprotich Japheth**
 
 ## License
 
