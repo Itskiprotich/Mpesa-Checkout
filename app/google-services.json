@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "67925899356",
+    "firebase_url": "https://mpesa-a3670.firebaseio.com",
+    "project_id": "mpesa-a3670",
+    "storage_bucket": "mpesa-a3670.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67925899356:android:981f18cca5d2d482178e99",
+        "android_client_info": {
+          "package_name": "com.imeja.mpesa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67925899356-9b3ts6mp267n7ht0tco0kus8hkci5fme.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imeja.mpesa",
+            "certificate_hash": "8fcc573e6079e78729009c307a9932fca0bcfe9a"
+          }
+        },
+        {
+          "client_id": "67925899356-bt09ie8hk6tsfpu5lrumq66m99f8ioc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_GjJMlOk0rMxoIhsyfMLHnyaMGZeMKTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67925899356-bt09ie8hk6tsfpu5lrumq66m99f8ioc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
