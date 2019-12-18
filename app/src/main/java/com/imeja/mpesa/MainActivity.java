@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.imeja.mpesacheckout.Constants;
+import com.imeja.mpesacheckout.ConstantsInfo;
 import com.imeja.mpesacheckout.OperationMode;
 import com.imeja.mpesacheckout.apidata.response.STKPushResponse;
 import com.imeja.mpesacheckout.interfaces.STKListener;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity  implements TokenListener {
         setContentView(R.layout.activity_main);
         phoneET = findViewById(R.id.phoneET);
         amountET = findViewById(R.id.amountET);
-        mpesa = new Mpesa(Constants.CONSUMER_KEY, Constants.CONSUMER_SECRET, OperationMode.SANDBOX);
+        mpesa = new Mpesa(ConstantsInfo.CONSUMER_KEY, ConstantsInfo.CONSUMER_SECRET, OperationMode.SANDBOX);
 
         sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
         sweetAlertDialog.setTitleText("Connecting to Safaricom");
@@ -75,15 +75,15 @@ public class MainActivity extends AppCompatActivity  implements TokenListener {
     @Override
     public void onTokenSuccess(Token token) {
         STKPush stkPush = new STKPush();
-        stkPush.setBusinessShortCode(Constants.BUSINESS_SHORT_CODE);
-        stkPush.setPassword(STKPush.getPassword(Constants.BUSINESS_SHORT_CODE, Constants.PASSKEY, STKPush.getTimestamp()));
+        stkPush.setBusinessShortCode(ConstantsInfo.BUSINESS_SHORT_CODE);
+        stkPush.setPassword(STKPush.getPassword(ConstantsInfo.BUSINESS_SHORT_CODE, ConstantsInfo.PASSKEY, STKPush.getTimestamp()));
         stkPush.setTimestamp(STKPush.getTimestamp());
         stkPush.setTransactionType(Transaction.CUSTOMER_PAY_BILL_ONLINE);
         stkPush.setAmount(amount);
         stkPush.setPartyA(STKPush.sanitizePhoneNumber(phone_number));
-        stkPush.setPartyB(Constants.PARTYB);
+        stkPush.setPartyB(ConstantsInfo.PARTYB);
         stkPush.setPhoneNumber(STKPush.sanitizePhoneNumber(phone_number));
-        stkPush.setCallBackURL(Constants.CALLBACKURL);
+        stkPush.setCallBackURL(ConstantsInfo.CALLBACKURL);
         stkPush.setAccountReference("test");
         stkPush.setTransactionDesc("some description");
 

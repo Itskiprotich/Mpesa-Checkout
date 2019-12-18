@@ -2,9 +2,9 @@ package com.imeja.mpesacheckout;
 
 import android.util.Log;
 
-public class Constants {
+public class ConstantsInfo {
 
-    private static final String TAG = "Constants";
+    private static final String TAG = "ConstantsInfo";
 
     public final static String CONSUMER_KEY = "Rmr15C4bGMG70KG0Rf8KDvOnGmokTRAC";
     public final static String CONSUMER_SECRET = "zIvyCg0ncRDzu3nv";
